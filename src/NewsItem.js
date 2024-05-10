@@ -5,7 +5,6 @@ export class NewsItem extends Component {
   render() {
     let {title, description, imgUrl, newsUrl} = this.props;
     const cardStyle = {
-      width: '18rem',
       backgroundColor: this.props.mode === 'dark' ? '#212529' : 'white',
       color: this.props.mode === 'light' ? 'black' : 'white'
     };
