@@ -30,13 +30,14 @@ export class NewsItem extends Component {
             <p className="card-text">{description}...</p>
             <p className="card-text">
               <small
+              className="text-body-Secondary"
                 style={{
                   color:
                     this.props.mode === "light"
                       ? "rgb(138 147 157 / 75%)"
-                      : "white",
+                      : "#adb5bd"
                 }}
-                className="text-body-secondary"
+                
               >
                 By {!author ? "Unknown" : author} on{" "}
                 {new Date(date).toGMTString()}
