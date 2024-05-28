@@ -36,8 +36,7 @@ export class NewsItem extends Component {
                     this.props.mode === "light"
                       ? "rgb(138 147 157 / 75%)"
                       : "#adb5bd"
-                }}
-                
+                }} 
               >
                 By {!author ? "Unknown" : author} on{" "}
                 {new Date(date).toGMTString()}
