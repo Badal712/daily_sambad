@@ -1,0 +1,19 @@
+.LogoImage {
+    width: 35px;
+    margin-right: 20px;
+}
+.navbar-brand {
+    color: white;
+}
+.navbar-brand:hover{
+    color: white;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: white;
+}
+.nav-link {
+    color: white;
+}
+.nav-link:hover{
+    color: rgb(190, 190, 190);
+}

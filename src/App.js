@@ -1,14 +1,9 @@
 import './App.css';
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import News from './components/News';
-//import Footer from './components/Footer';
-import{Routes} from 'react-router-dom';
-import {
-  BrowserRouter as Router,
-  Route,
-} from "react-router-dom";
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default class App extends Component {
   // testing Dark Mode
@@ -43,7 +38,7 @@ export default class App extends Component {
             <Route exact path="/Sports" element={<News path="/" pageSize={8} key="Sports" mode={mode} country="in" category="Sports"/>}></Route>
             <Route exact path="/Technology" element={<News path="/" pageSize={8} key="Technology" mode={mode} country="in" category="Technology"/>}></Route>
           </Routes> 
-          {/* <Footer mode={mode}/> */}
+          <Footer mode={mode}/>
         </Router>
       </>
     )
