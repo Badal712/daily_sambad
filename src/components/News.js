@@ -31,7 +31,7 @@ export class News extends Component {
     )} - Daily Sambad`;
   }
   async updateNews() {
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=3a428199d676415e8632679edb30f67f&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -44,17 +44,10 @@ export class News extends Component {
   async componentDidMount() {
     this.updateNews();
   }
-  handelPrev = async () => {
-    this.setState({ page: this.state.page - 1 });
-    this.updateNews();
-  };
-  handelNext = async () => {
-    this.setState({ page: this.state.page + 1 });
-    this.updateNews();
-  };
+ 
   fetchMoreData = async () => {
-    this.setState({page: this.state.page+1})
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=3a428199d676415e8632679edb30f67f&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    this.setState({ page: this.state.page + 1 });
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
@@ -77,33 +70,31 @@ export class News extends Component {
           dataLength={this.state.articles.length}
           next={this.fetchMoreData}
           hasMore={this.state.articles.length !== this.state.totalResults}
-          loader={<Spinner/>}
+          loader={<Spinner />}
         >
           <div className="container">
-            
-          <div className="row">
-            {this.state.articles.map((element) => {
-              return (
-                <div className="col-md-3" key={element.url}>
-                  <NewsItem
-                    title={element.title ? element.title : ""}
-                    mode={this.props.mode}
-                    description={
-                      element.description
-                        ? element.description.slice(0, 60)
-                        : ""
-                    }
-                    imgUrl={element.urlToImage}
-                    newsUrl={element.url}
-                    author={element.author}
-                    date={element.publishedAt}
-                    source={element.source.name}
-                  />
-                </div>
-              );
-            })}
-          </div>
-          
+            <div className="row">
+              {this.state.articles.map((element, index) => {
+                return (
+                  <div className="col-md-3" key={`${element.url}-${index}`}>
+                    <NewsItem
+                      title={element.title ? element.title : ""}
+                      mode={this.props.mode}
+                      description={
+                        element.description
+                          ? element.description.slice(0, 60)
+                          : ""
+                      }
+                      imgUrl={element.urlToImage}
+                      newsUrl={element.url}
+                      author={element.author}
+                      date={element.publishedAt}
+                      source={element.source.name}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </InfiniteScroll>
       </>
