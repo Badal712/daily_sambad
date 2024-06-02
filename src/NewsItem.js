@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-export class NewsItem extends Component {
-  render() {
-    let { title, description, imgUrl, newsUrl, author, date, source } = this.props;
+const NewsItem = (props) =>{
+
+    let { title, description, imgUrl, newsUrl, author, date, source } = props;
     const cardStyle = {
-      backgroundColor: this.props.mode === "dark" ? "#212529" : "white",
-      color: this.props.mode === "light" ? "black" : "white",
+      backgroundColor: props.mode === "dark" ? "#212529" : "white",
+      color: props.mode === "light" ? "black" : "white",
     };
     return (
       <div className="my-3">
@@ -33,7 +33,7 @@ export class NewsItem extends Component {
               className="text-body-Secondary"
                 style={{
                   color:
-                    this.props.mode === "light"
+                    props.mode === "light"
                       ? "rgb(138 147 157 / 75%)"
                       : "#adb5bd"
                 }} 
@@ -47,7 +47,7 @@ export class NewsItem extends Component {
               href={newsUrl}
               target="_blank"
               className={`btn btn-sm btn-${
-                this.props.mode === "light" ? "dark" : "primary"
+                props.mode === "light" ? "dark" : "primary"
               }`}
             >
               Read More
@@ -56,7 +56,6 @@ export class NewsItem extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default NewsItem;

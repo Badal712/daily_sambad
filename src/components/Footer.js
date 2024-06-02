@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import LogoLight from "../components/Logo/Daily Sambad Light.png";
 import LogoDark from "../components/Logo/Daily Sambad Dark.jpg";
 import GitLight from "../components/Logo/github Light.png";
@@ -27,7 +26,7 @@ export class footer extends Component {
           <div className="container py-5">
             <div className="row">
               <div className="col-lg-3 mb-3">
-                <Link
+                 <a
                   className="d-inline-flex align-items-center mb-2 link-dark text-decoration-none"
                   href="/"
                   aria-label="Bootstrap"
@@ -47,7 +46,7 @@ export class footer extends Component {
                   >
                     Daily Sambad
                   </span>
-                </Link>
+                </a>
                 <p
                   className="info"
                   style={{
@@ -84,24 +83,24 @@ export class footer extends Component {
                 <h5>Links</h5>
                 <ul className="list-unstyled">
                   <li className="mb-2">
-                    <Link href="/">Home</Link>
+                     <a href="/">Home</a>
                   </li>
                   <li className="mb-2">
-                    <Link href="/docs/5.0/">Docs</Link>
+                     <a href="/docs/5.0/">Docs</a>
                   </li>
                   <li className="mb-2">
-                    <Link href="/docs/5.0/examples/">Examples</Link>
+                     <a href="/docs/5.0/examples/">Examples</a>
                   </li>
                   <li className="mb-2">
-                    <Link href="https://themes.getbootstrap.com/">Themes</Link>
+                     <a href="https://themes.getbootstrap.com/">Themes</a>
                   </li>
                   <li className="mb-2">
-                    <Link href="https://blog.getbootstrap.com/">Blog</Link>
+                     <a href="https://blog.getbootstrap.com/">Blog</a>
                   </li>
                   <li className="mb-2">
-                    <Link href="https://cottonbureau.com/people/bootstrap">
+                     <a href="https://cottonbureau.com/people/bootstrap">
                       Swag Store
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -109,28 +108,28 @@ export class footer extends Component {
                 <p>Copyright © 2024 Daily Sambad. All rights reserved.</p>
                 <ul className="list-unstyled d-flex">
                   <li className="ms-3">
-                    <Link
+                     <a
                       className="link-dark"
                       href="https://github.com/Badal712/daily_sambad"
                     >
                       <img src={gitSrc} alt="Github" />
-                    </Link>
+                    </a>
                   </li>
                   <li className="ms-3">
-                    <Link
+                     <a
                       className="link-dark"
                       href="https://www.linkedin.com/in/badal-sahoo-a45b73231/"
                     >
                       <img src={liSrc} alt="Linkedin" />
-                    </Link>
+                    </a>
                   </li>
                   <li className="ms-3">
-                    <Link
+                     <a
                       className="link-dark"
                       href="https://x.com/BadalSa38607542?t=hjP7EbsLhfToGay0-6gt0g&s=08"
                     >
                       <img src={xSrc} alt="X" />
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
